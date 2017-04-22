@@ -1,0 +1,22 @@
+language: none
+
+integrations:
+    hub:
+        - integrationName: "gebaacr"
+          type: docker
+
+branches:
+  only:
+    - master
+
+build:
+    ci:
+        - echo 'CI running'
+        - export IMAGE_NAME=gebaacr.azurecr.io/realtime
+        - ./build.sh
+
+    post_ci:
+        - ./push.sh
+        - ./rancher.sh
+
+    

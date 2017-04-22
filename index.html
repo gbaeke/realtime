@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    </head>
+</html>
+<body>
+    <p>Welcome to the Socket.io Test!</p>
+    <ul id="messages"></ul>
+    <script>
+        var socket = io();
+        socket.emit('channel','particle');
+
+        socket.on('message', function(msg){
+            
+            message = JSON.parse(msg);
+            time = new Date(message.published_at)
+            $('#messages').append($('<li>').text("Temperature was "+ message.data + " at " + time));
+        })
+    </script>
+</body>

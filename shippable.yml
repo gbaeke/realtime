@@ -3,7 +3,7 @@ language: none
 integrations:
     hub:
         - integrationName: "gebaacr"
-          type: docker
+          type: "private docker registry"
 
 branches:
   only:
@@ -17,6 +17,5 @@ build:
 
     post_ci:
         - ./push.sh
-        - ./rancher.sh
 
     

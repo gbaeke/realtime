@@ -12,7 +12,7 @@ branches:
 build:
     ci:
         - echo 'CI running'
-        - export IMAGE_NAME=gebaacr.azurecr.io/realtime
+        - export IMAGE_NAME=gebaacr.azurecr.io/rt
         - ./build.sh
 
     post_ci:

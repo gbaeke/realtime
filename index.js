@@ -6,9 +6,9 @@ var io = require('socket.io')(server, { origins: '*:*'});
 var port = process.env.PORT||8888;
 
 
-var subscriber=require("redis").createClient(6380, "gebaredis.redis.cache.windows.net", 
-    {auth_pass: 'P3y4W+jD1MGUmouK7Tc3cQaex3/Ficjj+21AJ0/7t/0=',
-     tls: {servername:  'gebaredis.redis.cache.windows.net'}});
+var subscriber=require("redis").createClient(6380, process.env.REDISHOST, 
+    {auth_pass: process.env.REDISKEY,
+     tls: {servername:  process.env.REDISHOST}});
 
 
 app.get('/', function(req,res,next){

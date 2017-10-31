@@ -14,8 +14,9 @@
         socket.on('message', function(msg){
             
             message = JSON.parse(msg);
+            console.log(message);
             time = new Date(message.published_at)
-            $('#messages').append($('<li>').text("Temperature was "+ message.data + " at " + time));
+            $('#messages').append($('<li>').text("Temperature was "+ message.temperature + " at " + time));
         })
     </script>
 </body>

@@ -16,7 +16,7 @@
             message = JSON.parse(msg);
             console.log(message);
             time = new Date(message.published_at)
-            $('#messages').append($('<li>').text("Temperature was "+ message.temperature + " at " + time));
+            $('#messages').append($('<li>').text("Temperature was "+ message.temperature + ". CO2 was " + message.co2));
         })
     </script>
 </body>
